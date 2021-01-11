@@ -1,0 +1,123 @@
+.main-component {
+  height: @size-35;
+  overflow-y: scroll;
+  @media @desktop {
+    overflow-x: hidden;
+  }
+
+  @media @tablet {
+    overflow-x: hidden;
+  }
+
+  @media @landscape {
+    overflow-x: hidden;
+  }
+
+  @media @mobile {
+    height: @size-29;
+    overflow-x: hidden;
+  }
+
+  .mixin-webkit-scroll;
+
+  // songlist wrapper style section
+  .songList-wrapper {
+    .search-container {
+      .mixin-border-radius;
+      width: 98%;
+      height: @size-3;
+      padding-left: @size-1;
+      border: 1px solid @color-grey;
+      box-shadow: 5px 10px 18px @color-shadow;
+      &:focus {
+        outline: none;
+      }
+    }
+    .songDetail-wrapper {
+      .add-icon, .remove-icon {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      .song-thumbnail {
+        width: 7rem;
+        height: 7rem;
+      }
+      .song-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: @size-1;
+        flex: 1 1 1%;
+        span {
+          padding: @size-0point3 0;
+          &:first-child::first-letter {
+            text-transform: uppercase;
+          }
+        }
+      }
+      .song-playtime {
+      }
+    }
+  }
+
+  // playlist component style section
+  .playlist-component {
+    .modal {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: @size-20;
+      background-color: @color-white;
+      border-radius: @size-1;
+      padding: @size-2;
+      top: 40%;
+      z-index: 99;
+      .close-icon {
+        position: absolute;
+        color: @color-black;
+        right: @size-1;
+        top: @size-1;
+        cursor: pointer;
+      }
+      header {
+        font-size: @size-1point5;
+        margin-bottom: @size-1;
+        color: @color-black;
+      }
+      input[type='text'] {
+        height: @size-2;
+        border: 1px solid @color-grey;
+        padding: @size-0point2 @size-2;
+        color: @color-black;
+        border-radius: @size-1;
+        font-size: @size-1;
+      }
+      button {
+        width: @size-16;
+        height: @size-2point5;
+        border: 1px solid @color-grey;
+        margin: @size-1point5 @size-0point5 0rem @size-0point5;
+        background-color: @color-green;
+        color: @color-black;
+        border-radius: @size-1;
+        cursor: pointer;
+        font-size: @size-1;
+      }
+    }
+  }
+
+  // Playlist detail style section
+  .playlist-detail {
+    .add-songContainer {
+      .mixin-webkit-scroll;
+      height: 35rem;
+      overflow-y: scroll;
+    }
+  }
+}

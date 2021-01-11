@@ -1,0 +1,28 @@
+.header-component {
+  header {
+    font-weight: bold;
+    font-size: @size-2;
+    position: relative;
+    top: @size-0point7;
+  }
+  .navtab-container {
+    padding: 0 @size-1 @size-1 @size-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .tab-buttons {
+      .mixin-flexRow-center;
+      .mixin-border-radius;
+      text-decoration: none;
+      width: @size-10;
+      height: @size-3;
+      border: 1px solid @color-grey;
+      color: @color-antiqueWhite;
+      margin: @size-1 @size-0point5;
+      &.selected {
+        background-color: @color-green;
+        color: @color-black;
+      }
+    }
+  }
+}
