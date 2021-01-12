@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
   devtool: 'inline-source-map',
   module: {
     rules: [
@@ -34,14 +35,14 @@ module.exports = {
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, 'build/'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   devServer: {
     contentBase: path.join(__dirname, 'public/'),
     port: 3000,
-    publicPath: 'http://localhost:3000/dist/',
+    publicPath: 'http://localhost:3000/build/',
     hotOnly: true,
     historyApiFallback: true,
   },
@@ -51,6 +52,9 @@ module.exports = {
       host: 'localhost',
       port: 8080,
       proxy: 'http://localhost:3000/',
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve('./public/index.html'),
     }),
   ],
 };
